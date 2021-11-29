@@ -1,0 +1,20 @@
+const express = require( 'express');
+const PeopleRouter = express.Router();
+const {PeopleController} = require( '../controller/peopleController' );
+
+PeopleRouter
+
+    .get ('/', PeopleController.allPeople)
+
+    .get ('/:name', PeopleController.seePerson)
+
+    .get('/new/:name', PeopleController.createPerson)
+
+    .get ('/remove/:name', PeopleController.removePerson)
+
+
+
+    module.exports = {
+        PeopleRouter
+    };
+    
